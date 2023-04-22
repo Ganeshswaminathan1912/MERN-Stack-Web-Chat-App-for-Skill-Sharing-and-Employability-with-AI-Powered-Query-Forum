@@ -1,0 +1,55 @@
+.commentCenterTitle{
+    display: flex;
+    align-items: center;
+    margin: 15px 20px 0px 20px;
+}
+
+.commentTitle{
+    display: flex;
+    flex: 4;
+    object-fit: contain;
+    font-weight: 500;
+    font-style: bold;
+    font-size: 15px;
+    margin: 0 15px;
+    color: azure;
+}
+
+.commentTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7.5px;
+}
+.commentTopLeft{
+    display: flex;
+    align-items: center;
+}
+
+.commentAccountIcon{
+    color: rgb(190, 167, 167);
+    margin-left: 30px;
+}
+
+.commentUsername{
+    font-size: 15px;
+    font-weight: 500;
+    font-style: bold;
+    margin: 0 5px 1px 10px;
+    color: azure;
+}
+
+.commentContent{
+    font-size: 14px;
+    color: azure;
+    font-weight: 400;
+    margin-bottom: 1px;
+    margin-left: 2px;
+    text-align: left;
+}
+
+.commentDate{
+    font-size: 11px;
+    color: rgb(190, 167, 167);
+    padding: 5px;
+}

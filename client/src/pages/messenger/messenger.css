@@ -1,0 +1,134 @@
+.messenger{
+    height: calc(100vh-70px);
+    color: azure;
+}
+.messenger {
+    height: calc(100vh - 70px);
+    display: flex;
+  }
+  
+  .chatMenu {
+    flex: 3.5;
+  }
+  
+  .chatMenuInput {
+    width: 90%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: #121212;
+    color: azure;
+  }
+  .chatMenuInput:focus{
+    outline: none;
+  }
+  
+  .chatBox {
+    flex: 5.5;
+      overflow-x: hidden;
+      overflow-y: auto;
+  }
+  
+  .chatBoxWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .chatBoxTop {
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 10px;
+  }
+  
+  .chatBoxBottom {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .chatMessageInput {
+    border: none;
+    width: 84%;
+    background-color: hsla(0, 0%, 100%, 0.073);
+    outline: none;
+    color: white;
+    height: 35px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  
+  .chatSubmitButton {
+    width: 70px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: rgb(190, 126, 126);
+    color: azure;
+    font-size: 15px;
+  }
+  
+  .chatOnline {
+    flex: 3;
+  }
+  
+  .chatMenuWrapper,
+  .chatBoxWrapper,
+  .chatOnlineWrapper {
+    padding: 10px;
+    height: 100%;
+  }
+  
+  .noConversationText {
+    position: absolute;
+    top: 10%;
+    font-size: 25px;
+    color: rgb(224, 220, 220);
+    cursor: default;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .chatMenu {
+      flex: 1;
+    }
+  
+    .chatMenuInput {
+      display: none;
+    }
+  
+    .chatBox{
+      flex: 10;
+    }
+  
+    .chatOnline{
+      flex: 1px;
+    }
+  }
+
+  .searchSubmitButton{
+    color: azure;
+    position: absolute;
+    top: 55%;
+    margin-left: 20px;
+    width: 60;
+    height: 60;
+    right: 100px;
+    transition: left ease-in-out;
+    transition-duration: 5s;
+  }
+
+  .searchSubmitButton:hover{
+    right: 0px;
+    animation-play-state: running;
+  }
+  /* .searchSubmitButton:hover{
+    color: rgb(224, 220, 220);
+  } */

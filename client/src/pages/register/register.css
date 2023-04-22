@@ -1,0 +1,136 @@
+.register{
+    width: 100vw;
+    height: 100vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+}
+
+.registerWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width:30%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: hsla(0, 100%, 100%, 0.07);
+	box-shadow:
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	0px 2px 2px 0px hsla(0,0%,0%,0.14), 
+	0px 3px 1px -2px hsla(0,0%,0%,0.12), 
+	0px 1px 5px 0px hsla(0,0%,0%,0.2);
+}
+
+.registerLeft, .registerRight{
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.registerLogo{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-left: 153px;
+    margin-top: 60px;
+}
+.registerDescTitle{
+    font-size: 15px;
+    margin-left: 180px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.registerDesc{
+    font-size: 15px;
+    margin-left: 152px;
+    font-weight: 200;
+}
+
+#registerEmail{
+    margin-top: 40px;
+}
+
+div.input-block-register {
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-top: 30px;
+  }
+  div.input-block-register input {
+    font-size: 15px;
+    color: #495055;
+    height: 17px;
+    width: 290px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    border: 2px solid rgb(190, 167, 167);
+    outline: none;
+    background-color: hsla(0, 0%, 100%, 0);
+    margin-right: 70px;
+    margin-left: 30px;
+  }
+  div.input-block-register span.placeholder {
+    position: absolute;
+    margin: 17px 30px;
+    padding: 0 4px;
+    color: azure;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    top: 0;
+    left: 17px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    background: none;
+    pointer-events: none;
+  }
+  div.input-block-register input:valid+span.placeholder,
+  div.input-block-register input:focus+span.placeholder {
+    transform: scale(0.8) translateY(-30px);
+    background:rgb(35, 35, 35);
+  }
+  div.input-block-register input:focus {
+    color: azure;
+    border-color: rgb(190, 167, 167);
+  }
+  div.input-block-register input:focus+span.placeholder {
+    color: rgb(190, 167, 167);
+  }
+
+.registerButton{
+    height: 30px;
+    width: 60px;
+    border-radius: 7.5px;
+    border: none;
+    background-color: rgb(190, 126, 126);
+    cursor: pointer;
+    color: azure;
+    margin-left: 212px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.registerButton:hover{
+    background-color: rgb(186, 138, 138);
+}
+
+.registerLoginButton{
+    margin-left: 75px;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: azure;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.registerLoginButton:hover{
+    color: rgb(182, 137, 137);
+}

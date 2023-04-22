@@ -1,0 +1,79 @@
+.shareCommentContainer{
+    height: 50px;
+    margin: 30px 0px 10px 30px;
+    width: 90%;
+    border-radius: 10px;
+	background-color: rgb(143, 131, 131);
+	box-shadow:
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	0px 2px 2px 0px hsla(0,0%,0%,0.14), 
+	0px 3px 1px -2px hsla(0,0%,0%,0.12), 
+	0px 1px 5px 0px hsla(0,0%,0%,0.2);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.shareCommentCenter{
+    flex: 5;
+}
+.shareCommentInput{
+    border: none;
+    width: 95%;   
+    background-color:hsla(0, 0%, 100%, 0);
+    color: azure;
+    padding-right: 480px;
+    padding-left: 20px;
+    padding-bottom: 4px;
+}
+
+.shareCommentInput::placeholder{
+    color: azure;
+}
+
+
+.shareCommentInput:focus{
+    outline: none;
+}
+
+
+.iconRight{
+    padding-top: 2px;
+    padding-right: 30px;
+    flex: 3.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: azure;
+}
+
+.iconRight:hover{
+    color: wheat;
+}
+
+.commentSend{
+    margin-right: 10px;
+    display: flex;
+}
+
+.shareCommentRight{
+    flex: 3.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+.shareCommentItem{
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.faButton{
+    background: none;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+}

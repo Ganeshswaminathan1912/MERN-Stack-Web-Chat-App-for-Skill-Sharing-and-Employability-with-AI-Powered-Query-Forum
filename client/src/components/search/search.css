@@ -1,0 +1,19 @@
+.parentDiv{
+    color: azure;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.parentDivWrapper{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.childDiv{
+    cursor: pointer;
+    padding:10px 10px 10px 10px;
+}
+
+.childDiv:hover{
+    background-color: rgb(102, 91, 91);
+}

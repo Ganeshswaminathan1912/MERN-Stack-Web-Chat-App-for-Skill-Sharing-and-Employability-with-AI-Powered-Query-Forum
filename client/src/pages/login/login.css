@@ -1,0 +1,138 @@
+.login{
+    width: 100vw;
+    height: 100vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+}
+
+.loginWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    max-width: 30%;
+    max-height: 60%;
+    width:30%;
+    height: 60%;
+    border-radius: 10px;
+    background-color: hsla(0, 100%, 100%, 0.07);
+	box-shadow:
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	0px 2px 2px 0px hsla(0,0%,0%,0.14), 
+	0px 3px 1px -2px hsla(0,0%,0%,0.12), 
+	0px 1px 5px 0px hsla(0,0%,0%,0.2);
+}
+
+.loginLeft, .loginRight{
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.loginLogo{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-left: 153px;
+    margin-top: 10px;
+}
+.loginDescTitle{
+    font-size: 15px;
+    margin-left: 180px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.loginDesc{
+    font-size: 15px;
+    margin-left: 152px;
+    font-weight: 200;
+}
+
+#email{
+    margin-top: 40px;
+}
+
+div.input-block {
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-top: 30px;
+  }
+  div.input-block input {
+    font-size: 15px;
+    color: #495055;
+    height: 17px;
+    width: 290px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    border: 2px solid rgb(190, 167, 167);
+    outline: none;
+    background-color: hsla(0, 0%, 100%, 0);
+    margin-right: 70px;
+    margin-left: 30px;
+  }
+  div.input-block span.placeholder {
+    position: absolute;
+    margin: 17px 30px;
+    padding: 0 4px;
+    color: azure;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    top: 0;
+    left: 17px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    background: none;
+    pointer-events: none;
+  }
+  div.input-block input:valid+span.placeholder,
+  div.input-block input:focus+span.placeholder {
+    transform: scale(0.8) translateY(-30px);
+    background:rgb(35, 35, 35);
+  }
+  div.input-block input:focus {
+    color: azure;
+    border-color: rgb(190, 167, 167);
+  }
+  div.input-block input:focus+span.placeholder {
+    color: rgb(190, 167, 167);
+  }
+
+.loginButton{
+    height: 30px;
+    width: 60px;
+    border-radius: 7.5px;
+    border: none;
+    background-color: rgb(190, 126, 126);
+    cursor: pointer;
+    color: azure;
+    margin-left: 125px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.loginButton:hover{
+    background-color: rgb(186, 138, 138);
+}
+
+.loginRegisterButton{
+    margin-left: 75px;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: azure;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.loginRegisterButton:hover{
+    color: rgb(182, 137, 137);
+}
