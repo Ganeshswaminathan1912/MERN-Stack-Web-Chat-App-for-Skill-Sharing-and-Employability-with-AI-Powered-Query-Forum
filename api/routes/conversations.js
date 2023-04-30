@@ -25,7 +25,7 @@ router.get("/:userId", async (req,res)=>{
 })
 router.get("/receiver/:receiverId/:userId", async (req,res)=>{
     try {
-        const conversation = await Conversation.find({members:req.params.userId} && {members:req.params.receiverId})
+        const conversation = await Conversation.find({$and :[{members:{$in: [req.params.userId]}}, {members:{$in: [req.params.receiverId]}}]})
         res.status(200).json(conversation)
     } catch (error) {
         res.status(500).json(error)

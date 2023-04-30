@@ -134,3 +134,16 @@ div.input-block-register {
 .registerLoginButton:hover{
     color: rgb(182, 137, 137);
 }
+
+@media screen and (max-width: 1080px ) {
+  .registerWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width:30%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: hsla(0, 0%, 100%, 0);
+  }
+}

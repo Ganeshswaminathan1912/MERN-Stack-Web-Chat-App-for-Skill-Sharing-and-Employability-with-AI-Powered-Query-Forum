@@ -136,3 +136,18 @@ div.input-block {
 .loginRegisterButton:hover{
     color: rgb(182, 137, 137);
 }
+
+@media screen and (max-width: 1080px ) {
+  .loginWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    max-width: 30%;
+    max-height: 60%;
+    width:30%;
+    height: 60%;
+    border-radius: 10px;
+    background-color: hsla(0, 0%, 100%, 0);
+  }
+}

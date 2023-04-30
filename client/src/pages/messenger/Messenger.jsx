@@ -114,7 +114,7 @@ export default function Messenger() {
       return value && userData && userData.skills && userData.skills.toLowerCase().includes(value)
     })
     setResults(results);
-    console.log(results);
+    // console.log(results);
   }
 
   const handleChange = (value)=>{
@@ -163,8 +163,6 @@ export default function Messenger() {
         <div className="chatOnlineWrapper">
         <input type="text" placeholder="Search for Skill" className="chatMenuInput" value={input} onChange={e=>handleChange(e.target.value)}/>
           <Search results = {results}/>
-        
-        {/* <button className="searchSubmitButton"><SearchTwoTone/></button> */}
         </div>
       </div>
     </div> 

@@ -61,7 +61,8 @@ export default function Post({post}) {
             </Link>
             
                 <span className="postUsername">{user.username}</span>
-                <span className="postDate">{moment.utc(post.createdAt).local().startOf('seconds').fromNow()} ({user.skills})</span>
+                <span className="postSkill">({user.skills})</span>
+                <span className="postDate">{moment.utc(post.createdAt).local().startOf('seconds').fromNow()}</span>
             </div>
             <div className="postTopRight">
                 <MoreVert/>

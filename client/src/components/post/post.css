@@ -49,11 +49,17 @@
     font-size: 15px;
     font-weight: 500;
     font-style: bold;
-    margin: 0 15px;
+    margin: 0 5px 0 15px;
     color: azure;
 }
 
+.postSkill{
+    font-size: 11px;
+    color: rgb(190, 167, 167);
+}
+
 .postDate{
+    margin-left: 320px;
     font-size: 11px;
     color: rgb(190, 167, 167);
 }
@@ -132,3 +138,19 @@ margin: 10px 30px 10px 30px;
 .postCommentText:hover{
     color: rgb(182, 137, 137);
 }
+
+@media screen and (max-width: 1080px) {
+    .postDate{
+        margin-left: 275px;
+        font-size: 11px;
+        color: rgb(190, 167, 167);
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    .postDate{
+        margin-left: 275px;
+        font-size: 11px;
+        color: rgb(190, 167, 167);
+    }
+  }
