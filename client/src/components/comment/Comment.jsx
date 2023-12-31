@@ -47,10 +47,13 @@ export default function Comment(posts) {
             <Link to={`${commenter.username}`}>
               <AccountCircleTwoTone className="commentAccountIcon"/>
             </Link>
-                <span className="commentUsername">{commenter.username}</span>
+            <Link className="profileLink" to={`${commenter.username}`}>
+              <span className="commentUsername">{commenter.username}</span>
+            </Link>
                 {/* iterate for comments*/}
-                <span className="commentContent">{c.comment}</span>
-                <span className="commentDate">{moment.utc(c.createdAt).local().startOf('seconds').fromNow()}</span>
+                <span className="commentContent">{c.comment} <span className="commentDate">{moment.utc(c.createdAt).local().startOf('seconds').fromNow()}</span></span>
+
+                
             </div>
         </div>
         </div>

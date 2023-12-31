@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext"
 import axios from "axios"
 import {io} from "socket.io-client"
 import Search from "../../components/search/Search"
-import { ArrowRightAltTwoTone } from "@mui/icons-material"
+import {ArrowForwardIos} from "@mui/icons-material"
 
 export default function Messenger() {
   const {user} = useContext(AuthContext)
@@ -20,9 +20,14 @@ export default function Messenger() {
   const scrollRef = useRef();
   const [input,setInput] = useState("")
   const [results, setResults] = useState([])
-
+    const ip = "ws://"+window.location.hostname.toString()+":8900"
   useEffect(()=>{
-    socket.current = io("ws://localhost:8900")
+
+    socket.current = io(ip,{
+      perMessageDeflate: {
+        threshold: 1024, // The byte threshold for the compression
+      },
+    })
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
@@ -30,7 +35,7 @@ export default function Messenger() {
         createdAt: Date.now(),
       });
     });
-  },[])
+  },[ip])
 
   useEffect(() => {
     arrivalMessage &&
@@ -111,7 +116,7 @@ export default function Messenger() {
     //   console.log(r.username,r._id,r.skills)
     // ))
     const results = res.data.filter((userData)=>{
-      return value && userData && userData.skills && userData.skills.toLowerCase().includes(value)
+      return value && userData && userData.skills && userData.skills.toLowerCase().includes(value.toLowerCase())
     })
     setResults(results);
     // console.log(results);
@@ -124,6 +129,7 @@ export default function Messenger() {
 
   return (
     <>
+    <script src="https://cdn.socket.io/socket.io-3.1.3.min.js"></script>
     <Topbar/>
     <div className="messenger">
       <div className="chatMenu">
@@ -151,11 +157,11 @@ export default function Messenger() {
         </div>
         <div className="chatboxBottom">
 
-            <input placeholder="Type to send" type="text" className="chatMessageInput" onChange={(e)=>{setNewMessage(e.target.value)}} value={newMessage} required/>
+            <input placeholder="Type to message" type="text" className="chatMessageInput" onChange={(e)=>{setNewMessage(e.target.value)}} value={newMessage} required/>
             <button className="chatSubmitButton" onClick={handleSubmit}>Send</button>
         </div>
         </>)
-         : <span className="noConversationText">Click on a conversation to start chatting or search for skills in the search <ArrowRightAltTwoTone className="searchSubmitButton "/> </span>
+         : <span className="noConversationText">Click on a conversation to start chatting or search for skills in the search <ArrowForwardIos className="searchSubmitButton "/> </span>
         }
         </div>
       </div>

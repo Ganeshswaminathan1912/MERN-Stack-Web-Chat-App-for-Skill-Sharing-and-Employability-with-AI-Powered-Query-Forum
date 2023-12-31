@@ -121,14 +121,23 @@
     width: 60;
     height: 60;
     right: 100px;
-    transition: left ease-in-out;
-    transition-duration: 5s;
+    /* transform: rotate(90deg); */
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes example {
+    0%   {right:175px;}
+    25%  {right:29px;}
+    50%  {right:175px;}
+    75% {right: 29px;}
+    100% {right: 175px;}
   }
 
-  .searchSubmitButton:hover{
+  /* .searchSubmitButton:hover{
     right: 0px;
-    animation-play-state: running;
-  }
+    
+  } */
   /* .searchSubmitButton:hover{
     color: rgb(224, 220, 220);
   } */

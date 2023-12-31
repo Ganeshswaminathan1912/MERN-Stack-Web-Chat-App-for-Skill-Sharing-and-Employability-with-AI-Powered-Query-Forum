@@ -38,7 +38,19 @@ export default function Post({post}) {
   },[post._id])
 
   
+  function MyComponent(post) {
+    const html = post.replace(/\n/g, "<br />")
+    return (
+      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+    );
+  }
 
+  function capitalize(params) {
+    const firstLetter = params.charAt(0)
+    const remainingLetters = params.slice(1)
+     const cptLtr = firstLetter.toUpperCase() + remainingLetters
+     return cptLtr
+  }
   // let length = ""
   // const commentsLength = comments.length
   // if(commentsLength === 1 ){
@@ -59,9 +71,13 @@ export default function Post({post}) {
             <Link to={`${user.username}`}>
               <AccountCircleTwoTone className="accountIcon"/>
             </Link>
-            
+            <Link className="profileLink" to={`${user.username}`}>
                 <span className="postUsername">{user.username}</span>
-                <span className="postSkill">({user.skills})</span>
+            </Link>  
+            <Link className="profileLink" to={`${user.username}`}>
+              <span className="postSkill">({user.skills})</span>
+            </Link>
+                
                 <span className="postDate">{moment.utc(post.createdAt).local().startOf('seconds').fromNow()}</span>
             </div>
             <div className="postTopRight">
@@ -70,14 +86,19 @@ export default function Post({post}) {
         </div>
         <hr className="postHrTop" />
         <div className="postCenterTitle">
-            <span className="postTitle">{post.qTitle}</span>
+            <span className="postTitle">{capitalize(post.qTitle)}</span>
         </div>
         <div className="postCenterQuestion">
             <span className="postQuestion">{post.qDesc}</span>
         </div>
+        <div className="postCenterTitle">
+          <span className="postTitle">{post?.answer ? "Answer" : ""}</span>
+        </div>
+        
         <div className="postCenterAnswer">
-            <p className="postAnswer">{post?.answer ? "Answer" : "Since you didn't mention @chatgpt answer will be posted by any user in the community in comments section"}</p>
-            <span className="postAnswer">{post?.answer}</span>
+            
+            <p className="postAnswer">{post?.answer ? "": "Since you didn't mention '@chatgpt' answer will be posted by experts in the community in comments section"}</p>
+            <span className="postAnswer">{post?.answer ? MyComponent(post?.answer) : ""}</span>
         </div>
         <hr className="postHrBottom" />
         <div className="postBottom">  

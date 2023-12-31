@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Leftbar from "../../components/leftbar/Leftbar";
 import Rightbar from "../../components/rightbar/Rightbar";
 import Topbar from "../../components/topbar/Topbar";
@@ -6,13 +6,15 @@ import "./profile.css"
 import axios from "axios";
 import { useParams } from "react-router";
 import img from "../../person/profile.jpeg"
+import { AuthContext } from "../../context/AuthContext";
 
 
 
 
 export default function Profile() {
   // const PF = process.env.REACT_APP_PUBLIC_FOLDER
-  const [user,setUser] = useState({})
+  const {user} = useContext(AuthContext)
+  const [userDyn,setUser] = useState({})
   const username = useParams().username
 
   useEffect(()=>{
@@ -24,6 +26,24 @@ export default function Profile() {
     }
     fetchUser()
   },[username])
+
+const handleSubmit = async(value)=>{
+  const res = await axios.get(`api/user?username=${value}`)
+            // console.log(res.data._id);
+
+            const checkRes = await axios.get(`api/conversations/receiver/${res.data._id}/${user._id}`)
+            // console.log(checkRes.data.length);
+            if(checkRes.data.length === 1){
+              window.location.href = "/messenger";
+            }else{
+                const conversation = {
+                    senderId:user._id,
+                    receiverId:res.data._id
+                }
+                await axios.post("api/conversations/",conversation)
+                window.location.href = "/messenger";
+            }
+}
   //   const userData = []
   //   const fetchUser = async ()=>{
   //     await axios.get(`api/user?username=kgsn_1912`,userData).then(res =>{
@@ -46,13 +66,28 @@ export default function Profile() {
             <div className="myProfile"><span className="profileInfoDescription">My Profile</span></div>
             
             </div>
-            <div className="profileInfo">
-                <h4 className="profileInfoName">{user.username}</h4>
+            {userDyn.username === user.username ? (
+              <div className="profileInfo">
+                <h4 className="profileInfoName">{userDyn.username}</h4>
                 <hr className="profileHr" />
-                <div className="profileInfoDescription">Skills :<span className="profileInfoDescription">{user.skills}</span></div>
-                <div className="profileInfoDescription">Status :<span className="profileInfoDescriptionStatus">{user.status}</span></div>
-                <div className="profileInfoDescription">Year :<span className="profileInfoDescriptionYear">{user.year}</span></div>
+                <div className="profileInfoDescription">Skills :<span className="profileInfoDescription">{userDyn.skills}</span></div>
+                <div className="profileInfoDescription">Status :<span className="profileInfoDescriptionStatus">{userDyn.status}</span></div>
+                <div className="profileInfoDescription">Year :<span className="profileInfoDescriptionYear">{userDyn.year}</span></div>
             </div>
+            ):(
+              <div className="profileInfo">
+                <h4 className="profileInfoName">{userDyn.username}</h4>
+                <hr className="profileHr" />
+                <div className="profileInfoDescription">Skills :<span className="profileInfoDescription">{userDyn.skills}</span></div>
+                <div className="profileInfoDescription">Status :<span className="profileInfoDescriptionStatus">{userDyn.status}</span></div>
+                <div className="profileInfoDescription">Year :<span className="profileInfoDescriptionYear">{userDyn.year}</span></div>
+                <button className="shareButtonProfile" type='submit' onClick={e=>handleSubmit(userDyn.username)} >Chat</button>
+            </div>
+            )
+            
+            }
+
+            
             </div>           
             <Rightbar/>
         </div>

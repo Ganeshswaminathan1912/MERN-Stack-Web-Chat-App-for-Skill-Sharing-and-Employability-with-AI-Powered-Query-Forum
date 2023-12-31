@@ -5,6 +5,7 @@ import { useContext } from "react"
 
 export default function Search(results) {
     const {user} = useContext(AuthContext)
+    // console.log(results);
 
     const handleClick = async (value)=>{
         if(value === user.username){

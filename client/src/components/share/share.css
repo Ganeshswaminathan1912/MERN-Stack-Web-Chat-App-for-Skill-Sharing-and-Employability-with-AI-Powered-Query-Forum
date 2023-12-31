@@ -20,6 +20,7 @@
     width: 95%;   
     background-color:hsla(0, 0%, 100%, 0);
     color: white;
+    resize: none;
 }
 
 .shareInput::placeholder{

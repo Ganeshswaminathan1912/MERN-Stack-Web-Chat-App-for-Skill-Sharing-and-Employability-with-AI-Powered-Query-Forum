@@ -1,6 +1,7 @@
+const ip = require("ip")
 const io = require("socket.io")(8900, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000","http://"+ip.address().toString()+":3000"],
   },
 });
 
@@ -18,6 +19,8 @@ const removeUser = (socketId) => {
 const getUser = (userId) => {
   return users.find((user) => user.userId === userId);
 };
+
+io.compress(true)
 
 io.on("connection", (socket) => {
   //when ceonnect
@@ -45,3 +48,4 @@ io.on("connection", (socket) => {
     io.emit("getUsers", users);
   });
 });
+

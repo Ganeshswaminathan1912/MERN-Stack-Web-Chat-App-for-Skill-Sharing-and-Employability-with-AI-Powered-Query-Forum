@@ -50,6 +50,158 @@
     font-weight: 200;
 }
 
+.inpDescTitle{
+  margin-top: 1.5px;
+  margin-left: 35px;
+  font-size:x-small;
+}
+
+div.input-block-register-year {
+  position: relative;
+  margin-bottom: 12.5px;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+div.input-block-register-year input {
+  font-size: 15px;
+  color: #495055;
+  height: 17px;
+  width: 290px;
+  padding: 15px 15px;
+  border-radius: 10px;
+  border: 2px solid rgb(190, 167, 167);
+  outline: none;
+  background-color: hsla(0, 0%, 100%, 0);
+  margin-right: 70px;
+  margin-left: 30px;
+}
+div.input-block-register-year span.placeholder {
+  position: absolute;
+  margin: 17px 30px;
+  padding: 0 4px;
+  color: azure;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  top: 0;
+  left: 17px;
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  background: none;
+  pointer-events: none;
+}
+div.input-block-register-year input:valid+span.placeholder,
+div.input-block-register-year input:focus+span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+  background:rgb(35, 35, 35);
+}
+div.input-block-register-year input:focus {
+  color: azure;
+  border-color: rgb(190, 167, 167);
+}
+div.input-block-register-year input:focus+span.placeholder {
+  color: rgb(190, 167, 167);
+}
+
+div.input-block-register-skills {
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  margin-top: 0px;
+}
+
+
+div.input-block-register-skills input {
+  font-size: 15px;
+  color: #495055;
+  height: 17px;
+  width: 290px;
+  padding: 15px 15px;
+  border-radius: 10px;
+  border: 2px solid rgb(190, 167, 167);
+  outline: none;
+  background-color: hsla(0, 0%, 100%, 0);
+  margin-right: 70px;
+  margin-left: 30px;
+}
+div.input-block-register-skills span.placeholder {
+  position: absolute;
+  margin: 17px 30px;
+  padding: 0 4px;
+  color: azure;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  top: 0;
+  left: 17px;
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  background: none;
+  pointer-events: none;
+}
+div.input-block-register-skills input:valid+span.placeholder,
+div.input-block-register-skills input:focus+span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+  background:rgb(35, 35, 35);
+}
+div.input-block-register-skills input:focus {
+  color: azure;
+  border-color: rgb(190, 167, 167);
+}
+div.input-block-register-skills input:focus+span.placeholder {
+  color: rgb(190, 167, 167);
+}
+
+div.input-block-register-status {
+  position: relative;
+  margin-bottom: 15px;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+
+div.input-block-register-status input {
+  font-size: 15px;
+  color: #495055;
+  height: 17px;
+  width: 290px;
+  padding: 15px 15px;
+  border-radius: 10px;
+  border: 2px solid rgb(190, 167, 167);
+  outline: none;
+  background-color: hsla(0, 0%, 100%, 0);
+  margin-right: 70px;
+  margin-left: 30px;
+}
+div.input-block-register-status span.placeholder {
+  position: absolute;
+  margin: 17px 30px;
+  padding: 0 4px;
+  color: azure;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  top: 0;
+  left: 17px;
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  background: none;
+  pointer-events: none;
+}
+div.input-block-register-status input:valid+span.placeholder,
+div.input-block-register-status input:focus+span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+  background:rgb(35, 35, 35);
+}
+div.input-block-register-status input:focus {
+  color: azure;
+  border-color: rgb(190, 167, 167);
+}
+div.input-block-register-status input:focus+span.placeholder {
+  color: rgb(190, 167, 167);
+}
+
 #registerEmail{
     margin-top: 40px;
 }
@@ -145,5 +297,6 @@ div.input-block-register {
     height: 90%;
     border-radius: 10px;
     background-color: hsla(0, 0%, 100%, 0);
+    box-shadow: none;
   }
 }

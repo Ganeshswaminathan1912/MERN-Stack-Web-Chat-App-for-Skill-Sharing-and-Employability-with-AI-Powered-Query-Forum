@@ -94,3 +94,21 @@
     padding: 5px;
     text-align: center;
 } 
+.shareButtonProfile{
+    width: 9%;
+    margin-top: 20px;
+    border: none;
+    border-radius: 7.5px;
+    padding: 7px 15px 7px 15px;
+    background-color: rgb(190, 126, 126);
+    color: azure;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 360px;
+    margin-right: 20px;
+}
+
+.shareButtonProfile:hover{
+    background-color: rgb(186, 138, 138);
+}

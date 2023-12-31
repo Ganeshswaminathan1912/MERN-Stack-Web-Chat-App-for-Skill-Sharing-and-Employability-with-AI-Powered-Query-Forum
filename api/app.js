@@ -8,6 +8,7 @@ const authRoute = require("./routes/auth")
 const postRoute = require("./routes/posts")
 const conversationRoute = require("./routes/conversations")
 const messageRoute = require("./routes/messages")
+const emailRoute = require("./routes/email")
 
 const app = express()
 
@@ -28,6 +29,7 @@ app.use("/api/auth", authRoute)
 app.use("/api/post", postRoute)
 app.use("/api/conversations", conversationRoute)
 app.use("/api/messages", messageRoute)
+app.use("/api/sendEmail",emailRoute)
 
 app.route("/")
 .get((req,res)=>{

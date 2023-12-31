@@ -49,7 +49,7 @@
     font-size: 15px;
     font-weight: 500;
     font-style: bold;
-    margin: 0 5px 0 15px;
+    margin: 0 5px 0px 15px;
     color: azure;
 }
 
@@ -74,7 +74,7 @@
     object-fit: contain;
     font-weight: 500;
     font-style: bold;
-    font-size: 15px;
+    font-size: 19px;
     margin: 0 15px;
     color: azure;
 }
@@ -106,7 +106,9 @@
     font-size: 15px;
     margin: 0 15px;
     color: azure;
+    line-height: 1.5;
 }
+
 
 .postHrBottom{
 height: 0.5px;

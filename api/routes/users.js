@@ -77,7 +77,20 @@ router.get("/",async (req,res)=>{
 router.get("/allUsers", async(req,res)=>{
     try {
         const usrs = await User.find({})
-        res.status(200).json(usrs)
+        const filteredUsrs = usrs.map(({ username, skills }) => ({
+      username,
+      skills,
+    }));
+        res.status(200).json(filteredUsrs)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
+router.get("/searchEmail/:email", async(req,res)=>{
+    try {
+        const foundEmail = await User.findOne({email:req.params.email})
+        res.status(200).json({email:foundEmail.email})
     } catch (error) {
         res.status(500).json(error)
     }

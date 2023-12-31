@@ -9,6 +9,7 @@ export default function Topbar(){
      const handleLogout = ()=>{
         localStorage.clear()
         window.location.reload()
+        window.location.href = "/login";
      }
     return(
         <div className="topbarContainer">
@@ -21,21 +22,21 @@ export default function Topbar(){
             <div className="topbarCenter">
             <div className="searchbar">
             <SearchOutlined className="searchIcon"/>
-            <input placeholder="Search for Skill" className="searchInput" />
+            <input placeholder="Search for Queries (FE)" className="searchInput" />
             </div>                
             </div>
             <div className="topbarRight">
             <div className="topbarIcons">
             <div className="topbarIconItem">
-            <Link to={"/messenger"} className="profileLink">
-                <ChatOutlined className="msgIcon"/>
+            <Link to={"/"} className="profileLink">
+                <PsychologyAltOutlined className="msgIcon"/>
             </Link>
             
             {/* <span className="topbarIconBadge">1</span> */}
             </div>
             <div className="topbarIconItem">
-            <Link to={"/"}>
-            <PsychologyAltOutlined className="profileLink"/>
+            <Link to={"/messenger"}>
+            <ChatOutlined className="profileLink"/>
             </Link>
             {/* <span className="topbarIconBadge">1</span> */}
             </div>
